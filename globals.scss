@@ -1,0 +1,64 @@
+$light_green: #375F4C;
+$dark_green: #2A4739;
+$light_green2: #609F9F;
+$white: #F0F6F3;
+
+@mixin includeGrid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+}
+
+// GRID CSS
+@mixin gridLayout($cs, $ce, $rs, $re){
+    grid-row-start: $rs;
+    grid-row-end: $re;
+    grid-column-start: $cs;
+    grid-column-end: $ce;
+}
+
+@mixin angle-edge($pos-top:null, $angle-top:null, $pos-btm:null, $angle-btm:null){
+    width: 100%;
+    position: relative;
+    &::before,
+    &::after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      transition: ease all .5s;
+    }
+   
+    @if $pos-top{
+      &::before{
+        @if $pos-top == 'topleft'{
+          top: 0;
+          transform-origin: right top;
+          transform: skewY($angle-top);
+        }
+        @if $pos-top == 'topright' {
+          top: 0;
+          transform-origin: left top;
+          transform: skewY(-$angle-top);
+        } 
+      }
+    }
+   
+    @if $pos-btm{
+      &::after{
+        @if $pos-btm == 'bottomleft' {
+          bottom: 0;
+          transform-origin: right bottom;
+          transform: skewY(-$angle-btm);
+   
+        } 
+   
+        @if $pos-btm == 'bottomright' {
+          bottom: 0;
+          transform-origin: left bottom;
+          transform: skewY($angle-btm);
+        } 
+      }
+    }
+  }
