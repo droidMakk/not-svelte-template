@@ -1,64 +1,85 @@
-$light_green: #375F4C;
-$dark_green: #2A4739;
-$light_green2: #609F9F;
-$white: #F0F6F3;
+$light_green: #375f4c;
+$dark_green: #2a4739;
+$light_green2: #609f9f;
+$white: #f0f6f3;
 
 @mixin includeGrid {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
 }
 
 // GRID CSS
-@mixin gridLayout($cs, $ce, $rs, $re){
-    grid-row-start: $rs;
-    grid-row-end: $re;
-    grid-column-start: $cs;
-    grid-column-end: $ce;
+@mixin gridLayout($cs, $ce, $rs, $re) {
+  grid-row-start: $rs;
+  grid-row-end: $re;
+  grid-column-start: $cs;
+  grid-column-end: $ce;
 }
 
-@mixin angle-edge($pos-top:null, $angle-top:null, $pos-btm:null, $angle-btm:null){
+.loading {
+  position: relative;
+  background-color: #e2e2e2;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
     width: 100%;
-    position: relative;
-    &::before,
-    &::after{
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: inherit;
-      z-index: -1;
-      transition: ease all .5s;
-    }
-   
-    @if $pos-top{
-      &::before{
-        @if $pos-top == 'topleft'{
-          top: 0;
-          transform-origin: right top;
-          transform: skewY($angle-top);
-        }
-        @if $pos-top == 'topright' {
-          top: 0;
-          transform-origin: left top;
-          transform: skewY(-$angle-top);
-        } 
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@mixin angle-edge($pos-top: null, $angle-top: null, $pos-btm: null, $angle-btm: null) {
+  width: 100%;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    transition: ease all 0.5s;
+  }
+
+  @if $pos-top {
+    &::before {
+      @if $pos-top == "topleft" {
+        top: 0;
+        transform-origin: right top;
+        transform: skewY($angle-top);
       }
-    }
-   
-    @if $pos-btm{
-      &::after{
-        @if $pos-btm == 'bottomleft' {
-          bottom: 0;
-          transform-origin: right bottom;
-          transform: skewY(-$angle-btm);
-   
-        } 
-   
-        @if $pos-btm == 'bottomright' {
-          bottom: 0;
-          transform-origin: left bottom;
-          transform: skewY($angle-btm);
-        } 
+      @if $pos-top == "topright" {
+        top: 0;
+        transform-origin: left top;
+        transform: skewY(-$angle-top);
       }
     }
   }
+
+  @if $pos-btm {
+    &::after {
+      @if $pos-btm == "bottomleft" {
+        bottom: 0;
+        transform-origin: right bottom;
+        transform: skewY(-$angle-btm);
+      }
+
+      @if $pos-btm == "bottomright" {
+        bottom: 0;
+        transform-origin: left bottom;
+        transform: skewY($angle-btm);
+      }
+    }
+  }
+}
