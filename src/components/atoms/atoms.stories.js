@@ -2,6 +2,7 @@ import SingleComment from './singlecomment.svelte';
 import Loader from './loader.svelte';
 import Empty from './empty.svelte';
 import CommentField from './commentfield.svelte';
+import SingleMatch from './singlematch.svelte';
 
 
 export default {
@@ -26,4 +27,9 @@ export const empty = () => ({
 export const commentField = () => ({
     Component: CommentField,
     name: "Comment Field"
+})
+
+export const singleMatch = () => ({
+    Component: SingleMatch,
+    name: "Single Match"
 })
