@@ -1,10 +1,10 @@
-import BlueBet from './bluebet.svelte';
+import BlueBet from "./bluebet.svelte";
 
 export default {
-    title: 'Dashboard'
+    title: "Dashboard"
 }
 
 export const blueBet = () => ({
     Component: BlueBet,
-    name: 'Blue bet'
+    name: "Blue bet"
 });

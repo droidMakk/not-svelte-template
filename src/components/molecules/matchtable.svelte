@@ -15,6 +15,11 @@
     .matchtable__label {
       margin-bottom: 20px;
     }
+
+    .matchtable__matches{
+      padding: 10px 20px;
+      background-color: $base_color2;
+    }
   }
 </style>
 

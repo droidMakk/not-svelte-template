@@ -34,14 +34,25 @@
       @include gridLayout(2, 5, 1, 1);
       text-transform: uppercase;
       margin: auto;
+      span {
+        margin: 0px 10px;
+        color: darkgrey;
+      }
     }
 
     .singlematch__datetime {
       @include gridLayout(6, 8, 1, 1);
+      margin: auto;
     }
 
     .singlematch__scores {
       @include gridLayout(10, 12, 1, 1);
+
+      p:nth-child(odd) {
+        padding: 5px 10px;
+        background-color: darkgrey;
+        border-radius: 5px;
+      }
     }
   }
 </style>
@@ -51,7 +62,11 @@
     <img src={`/img/flags/${team1}.svg`} alt="country-flag" />
     <img src={`/img/flags/${team2}.svg`} alt="country-flag" />
   </div>
-  <div class="singlematch__teams">{team1} VS {team2}</div>
+  <div class="singlematch__teams">
+    {team1}
+    <span>VS</span>
+    {team2}
+  </div>
   <div class="singlematch__datetime">
     <p>{date}</p>
     <p>&emsp;</p>

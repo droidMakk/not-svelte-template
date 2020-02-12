@@ -43,6 +43,7 @@
         &.active {
           background: $base_color1;
           border-radius: 10px;
+          color: white;
         }
 
         &:hover {
