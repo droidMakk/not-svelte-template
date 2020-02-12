@@ -94,7 +94,6 @@
     .comments__container {
       height: inherit;
       max-height: 90vh;
-      max-width: 350px;
       overflow: hidden scroll;
       border-left: solid 1px lightgrey;
 

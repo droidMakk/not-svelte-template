@@ -23,6 +23,7 @@
 
   .tabbar {
     font-family: sans-serif;
+    font-size: small;
 
     .tabbar__label {
       padding: 10px 10px;
@@ -33,11 +34,11 @@
       width: inherit;
       background: $base_color2;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       border-radius: 10px;
 
       .tabbar__tab {
-        padding: 10px 50px;
+        padding: 10px 20px;
         color: black;
         transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         &.active {

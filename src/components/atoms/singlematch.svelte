@@ -14,6 +14,7 @@
     @include includeGrid();
     background-color: $base_color;
     font-family: sans-serif;
+    font-size: small;
     max-width: 90vw;
     .singlematch__flags,
     .singlematch__teams,
@@ -41,12 +42,12 @@
     }
 
     .singlematch__datetime {
-      @include gridLayout(6, 8, 1, 1);
+      @include gridLayout(5, 8, 1, 1);
       margin: auto;
     }
 
     .singlematch__scores {
-      @include gridLayout(10, 12, 1, 1);
+      @include gridLayout(9, 12, 1, 1);
 
       p:nth-child(odd) {
         padding: 5px 10px;

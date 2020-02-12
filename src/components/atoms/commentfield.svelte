@@ -5,7 +5,6 @@
 
   .comment {
     background: $base_color3;
-    max-width: 320px;
     display: flex;
     padding: 10px 15px;
     .comment__field {
