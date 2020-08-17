@@ -9,25 +9,25 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^6.0.0",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/svelte": "^5.2.8",
-    "babel-loader": "^8.0.6",
-    "node-sass": "^4.13.1",
-    "rollup": "^1.20.0",
-    "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.16.7",
+    "@babel/core": "^7.11.1",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@storybook/addon-actions": "^6.0.10",
+    "@storybook/addon-links": "^6.0.10",
+    "@storybook/addons": "^6.0.10",
+    "@storybook/svelte": "^6.0.10",
+    "babel-loader": "^8.1.0",
+    "node-sass": "^4.14.1",
+    "rollup": "^2.26.3",
+    "rollup-plugin-livereload": "^1.3.0",
+    "rollup-plugin-svelte": "^5.2.3",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.24.1",
     "svelte-loader": "^2.13.6"
   },
   "dependencies": {
-    "animejs": "^3.1.0",
-    "sirv-cli": "^0.4.4",
+    "animejs": "^3.2.0",
+    "sirv-cli": "^1.0.6",
     "typed.js": "^2.0.11"
   }
 }
